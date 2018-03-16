@@ -105,6 +105,7 @@ public class NormalTest {
 	public void t07_co_cm_o() {
 		
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class).cause(Exception2.class, "second exception").cause(Exception3.class));
 		
 		// create exception
 		Exception3 exc3 = new Exception3();
@@ -119,6 +120,7 @@ public class NormalTest {
 	public void t08_co_cm_m() {
 		
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class).cause(Exception2.class, "second exception").cause(Exception3.class, "third exception"));
 		
 		// create exception
 		Exception3 exc3 = new Exception3("third exception");
@@ -133,6 +135,7 @@ public class NormalTest {
 	public void t09_cm_o() {
 
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class));
 		
 		// create exception
 		Exception2 exc2 = new Exception2();
@@ -146,6 +149,7 @@ public class NormalTest {
 	public void t10_cm_m() {
 
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class, "second exception"));
 		
 		// create exception
 		Exception2 exc2 = new Exception2("second exception");
@@ -159,6 +163,7 @@ public class NormalTest {
 	public void t11_cm_co_o() {
 
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class).cause(Exception3.class));
 		
 		// create exception
 		Exception3 exc3 = new Exception3();
@@ -173,6 +178,7 @@ public class NormalTest {
 	public void t12_cm_co_m() {
 		
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class).cause(Exception3.class, "third exception"));
 		
 		// create exception
 		Exception3 exc3 = new Exception3("third exception");
@@ -187,6 +193,7 @@ public class NormalTest {
 	public void t13_cm_cm_o() {
 
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class, "second exception").cause(Exception3.class));
 		
 		// create exception
 		Exception3 exc3 = new Exception3();
@@ -201,6 +208,7 @@ public class NormalTest {
 	public void t14_cm_cm_m() {
 
 		// handle exception
+		this.fc.expect(new Fault(Exception1.class, "first exception").cause(Exception2.class, "second exception").cause(Exception3.class, "third exception"));
 		
 		// create exception
 		Exception3 exc3 = new Exception3("third exception");
